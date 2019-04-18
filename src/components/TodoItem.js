@@ -11,7 +11,7 @@ export class TodoItem extends Component{
         if (this.props.todo.completed)
         {
             return{
-              //  padding: '10px',
+               padding: '15px',
                 backgroundColor: 'yellow',
                 textDecoration: 'line-through'
             }
@@ -35,9 +35,10 @@ export class TodoItem extends Component{
         return(
             <div style={this.getStule()}>
 
-                <p>
+                <p style={{padding :'10px'}}>
                     <input type="checkbox" onChange={this.props.markComplete.bind(this, id,title)}/>{' '}
                     {title}
+                    <button onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>X</button>
                 </p>
             </div>
         )
@@ -46,6 +47,15 @@ export class TodoItem extends Component{
 //giving prop-types for best practise
 TodoItem.propTypes={
     todo: PropTypes.object.isRequired
+}
+const  btnStyle={
+    background:'red',
+    color:'white',
+    border:'none',
+    padding:'5px 10px',
+    borderRadius: '50%',
+    cursor:'pointer',
+    float: 'right'
 }
 
 //applying styles using variables

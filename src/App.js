@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import './components/layout/Header'
 import Todos from './components/Todos';
+import Header from "./components/layout/Header";
+import AddTodo from './components/AddTodo';
 
 class App extends Component {
   state={
@@ -32,11 +35,18 @@ class App extends Component {
       })});
   }
 
+  //Delete todo
+  delTodo = (id)=>{
+    console.log(id)
+  }
+
   render() {
     return (
       <div className="App">
 
-        <Todos todos={this.state.todos} markComplete={this.markComplete} />
+        <Header/>
+        <AddTodo/>
+        <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
       </div>
     );
   }

@@ -11,7 +11,7 @@ class Todos extends Component {
         return this.props.todos.map((todo)=>(
 
            //<TodoItem todo={todo} /> ************ -> this way is correct but better to have a key to be unique
-            <TodoItem key={todo.id} todo={todo} markComplete={this.props.markComplete}  />
+            <TodoItem key={todo.id} todo={todo} markComplete={this.props.markComplete} delTodo={this.props.delTodo} />
 
 
         ));
